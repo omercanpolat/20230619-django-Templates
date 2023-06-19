@@ -1,0 +1,40 @@
+{% extends 'home/base.html' %}
+
+
+{% block title %}
+    Home
+{% endblock title %}
+    
+
+{% block body %}
+    
+    {% load static %}
+
+    <h1>Student Page</h1>  
+
+        {{ first_name | title }}
+        <br>
+        <!-- {{ book_name | capfirst }} -->
+        {{ book_name | truncatechars:5 }}
+        <br>
+
+    <!-- my comment for html -->
+        {# my comment for dtl #}
+        
+        {% comment %}
+        My
+            multiple
+            line
+            comment
+        {% endcomment %}
+            
+    <div>
+        {% for year in my_list %}
+        <li>{{ year }}</li>
+        {% endfor %}
+    </div>
+
+
+    <img src="{% static 'home/images/kedi.jpg' %}" alt="My image">
+    
+{% endblock body %}
